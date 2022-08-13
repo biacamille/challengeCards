@@ -46,32 +46,36 @@ function App() {
 function handleShowingTheCards(){
   setIsShowingResult(!isShowingResult);
 }
-
   return (
+
   <div id="cards">
-    {isShowingResult && (
+     {isShowingResult && (
       <>
       <div className="card">
-       <h1>Pessoas Totais</h1>
-      <p>{totalClient.total}</p>	
+        <h1>Pessoas Totais</h1>
+        <p>{totalClient.total}</p>	
     </div>
+
     <div className="card">
       <h1>Pessoas Online</h1>
       <p>{totalClient.online}</p>	
     </div>
+
     <div className="card">
       <h1>Pessoas Offline</h1>
       <p>{totalClient.total - totalClient.online}</p>
     </div>
+
       <div className="card">
         <h1>Pessoas Conectadas no período</h1>
         <p>{clientDate.length}</p>
       </div>
       </>
     )}
-   
       <div>
-        <button className="button" onClick={handleShowingTheCards}>Ver resultados</button>
+        <button className="button" onClick={handleShowingTheCards}>
+          {isShowingResult ? 'Fechar Cards' : 'Abrir Cards'}
+          </button>
       </div>
     
       </div>
